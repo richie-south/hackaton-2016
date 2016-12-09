@@ -6,13 +6,10 @@ import defaultState from './defaultState'
 
 
 document.addEventListener('keydown', function (e) {
-  
+
   const currentState = store.getState()
 
-  console.log(currentState)
   if(currentState.isGameOver){
-    console.log('hek')
-    //store.dispatch
     store.dispatch({
       type: 'RESET',
       state:  defaultState,

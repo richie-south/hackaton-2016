@@ -21,7 +21,6 @@ class MainTable extends Component {
               return (<td key={`tdKey_${columnNr}`} className='player'></td>)
             }
             if(isPillar){
-              console.log(this.props.currentPillarPosition)
               return (<td key={`tdKey_${columnNr}_pillar`} className='player'></td>)
             }
             return (<td key={`tdKey_${columnNr}`}></td>)
