@@ -6,7 +6,7 @@ const currentPlayerPosition = [
     row: 5,
     column: 5,
   },
-  
+
   {
     row: 6,
     column: 5,
@@ -38,12 +38,13 @@ const table = () => {
   }
 
   return arr
-} 
+}
 
 const defaultState = {
   table: table(),
   isGameOn: false,
   currentPlayerPosition,
+  goingUp: false,
 }
 
 const store = createStore(rootReducer, defaultState)

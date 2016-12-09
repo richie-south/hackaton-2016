@@ -2,8 +2,12 @@
 export const movePlayerUp = () => ({
   type: 'MOVE_PLAYER_UP',
 })
-
-
+export const jump = () => ({
+  type: 'JUMP',
+})
+export const stopJump = () => ({
+  type: 'STOP_JUMP',
+})
 export const turnGameOn = () => ({
   type: 'TURN_ON_GAME',
 })
