@@ -2,52 +2,7 @@
 
 import store from './store'
 import * as actionsCreators from './actions/actionCreators'
-
-const currentPlayerPosition = [
-  {
-    row: 5,
-    column: 5,
-  },
-
-  {
-    row: 6,
-    column: 5,
-  },
-
-  {
-    row: 5,
-    column: 6,
-  },
-
-  {
-    row: 6,
-    column: 6,
-  },
-
-]
-const currentPillarPosition = [
-  {
-    row: 50,
-    column: 15,
-  }
-]
-
-const table = () => {
-  const empty = 'empty'
-  const arr = []
-
-  for(let i = 0; i < 50; i++){
-    const row = []
-    for(let k = 0; k < 50; k++){
-      row.push(empty)
-    }
-    arr.push(row)
-  }
-
-  return arr
-}
-
-
+import defaultState from './defaultState'
 
 
 document.addEventListener('keydown', function (e) {
@@ -60,14 +15,7 @@ document.addEventListener('keydown', function (e) {
     //store.dispatch
     store.dispatch({
       type: 'RESET',
-      state:  {
-        table: table(),
-        isGameOn: false,
-        currentPlayerPosition,
-        currentPillarPosition,
-        goingUp: false,
-        isGameOver: false,
-      },
+      state:  defaultState,
     })
     store.dispatch(actionsCreators.turnGameOn())
     store.dispatch(actionsCreators.gameNotOver())
