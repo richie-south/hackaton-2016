@@ -20,6 +20,19 @@ function render(){
       store.dispatch(actionsCreators.reusePillar())
     }
 
+
+    currentState.currentPlayerPosition.forEach(playerPosition => {
+      const isCollision = currentState.currentPillarPosition.find(pillarPosition => 
+        pillarPosition.row === playerPosition.row && 
+        pillarPosition.column === playerPosition.column)
+      
+      if(isCollision){
+        store.dispatch(actionsCreators.gameOver())
+        store.dispatch(actionsCreators.turnGameOff())
+      }
+    })
+    
+
     if(currentState.goingUp){
       if(jumpCount > 10){
           store.dispatch(actionsCreators.stopJump())
