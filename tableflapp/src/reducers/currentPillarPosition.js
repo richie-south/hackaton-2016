@@ -6,6 +6,7 @@ const currentPillarPosition = (state = [], action) => {
   return state.map((position) =>({
     row: position.row,
     column: position.column-1,
+    color: position.color,
   }))
   default:
     return state

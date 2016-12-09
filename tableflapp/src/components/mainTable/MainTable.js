@@ -18,11 +18,11 @@ class MainTable extends Component {
             const isPlayer = this.props.currentPlayerPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
             const isPillar = this.props.currentPillarPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
             if(isPlayer){
-              
+
               return (<td key={`tdKey_${columnNr}`} className='player' style={{background: isPlayer.color, border: 'none'}}></td>)
             }
             if(isPillar){
-              return (<td key={`tdKey_${columnNr}_pillar`} className='player'></td>)
+              return (<td key={`tdKey_${columnNr}_pillar`} className='pillar'style={{border: 'none', background: isPillar.color}}></td>)
             }
             return (<td key={`tdKey_${columnNr}`} ></td>)
           })
