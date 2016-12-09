@@ -1,10 +1,28 @@
 import { createStore } from 'redux'
 import rootReducer from './reducers/index'
 
-const currentPlayerPosition = {
-  row: 5,
-  column: 5,
-} 
+const currentPlayerPosition = [
+  {
+    row: 5,
+    column: 5,
+  },
+  
+  {
+    row: 6,
+    column: 5,
+  },
+
+  {
+    row: 5,
+    column: 6,
+  },
+
+  {
+    row: 6,
+    column: 6,
+  },
+
+]
 
 
 const table = () => {

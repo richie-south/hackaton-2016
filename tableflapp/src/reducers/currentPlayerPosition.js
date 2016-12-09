@@ -4,14 +4,14 @@ const isGameOn = (state = [], action) => {
 
   switch(action.type){
   case 'MOVE_PLAYER_DOWN':
-    
-    return {
-      row: state.row+1,
-      column: state.column,
-    }
+    return state.map((position) => ({
+      row: position.row+1,
+      column: position.column,
+    }))
   default:
     return state
   }
 }
 
 export default isGameOn
+

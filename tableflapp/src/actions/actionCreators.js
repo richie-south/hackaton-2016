@@ -12,8 +12,6 @@ export const turnGameOff = () => ({
   type: 'TURN_OFF_GAME',
 })
 
-export const movePlayerDown = (row, column) => ({
+export const movePlayerDown = () => ({
   type: 'MOVE_PLAYER_DOWN',
-  row,
-  column,
 })
