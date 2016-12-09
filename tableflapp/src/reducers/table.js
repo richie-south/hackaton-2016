@@ -1,10 +1,9 @@
 
+import store from '../store'
+import * as actionsCreators from '../actions/actionCreators'
 
 const table = (state = [], action) => {
-
   switch(action.type){
-  case 'SET_INITIAL_TABLE':
-    return state
   default:
     return state
   }

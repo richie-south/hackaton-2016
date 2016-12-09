@@ -4,6 +4,9 @@ import App from './App'
 import './index.css'
 import store from './store'
 import { Provider  } from 'react-redux'
+import './controlls'
+import './gameLogic'
+
 
 ReactDOM.render(
   <Provider store={store}>
