@@ -25,8 +25,8 @@ const currentPlayerPosition = [
 ]
 const currentPillarPosition = [
   {
-    row: 50,
-    column: 15,
+    row: 15,
+    column: 49,
   }
 ]
 
