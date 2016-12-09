@@ -28,3 +28,6 @@ export const gameNotOver = () => ({
   type: 'SET_GAME_NOT_OVER',
 })
 
+export const pillarMovement = () => ({
+  type: 'PILLAR_MOVE',
+})

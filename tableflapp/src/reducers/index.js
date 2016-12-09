@@ -4,6 +4,7 @@ import isGameOn from './isGameOn'
 import currentPlayerPosition from './currentPlayerPosition'
 import goingUp from './goingUp'
 import isGameOver from './isGameOver'
+import pillarMovement from './pillarMovement'
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   currentPlayerPosition,
   goingUp,
   isGameOver,
+  pillarMovement,
 })
 
 export default rootReducer
