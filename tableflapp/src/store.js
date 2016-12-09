@@ -23,7 +23,12 @@ const currentPlayerPosition = [
   },
 
 ]
-
+const currentPillarPosition = [
+  {
+    row: 50,
+    column: 15,
+  }
+]
 
 const table = () => {
   const empty = 'empty'
@@ -44,6 +49,7 @@ const defaultState = {
   table: table(),
   isGameOn: false,
   currentPlayerPosition,
+  currentPillarPosition,
   goingUp: false,
 }
 
