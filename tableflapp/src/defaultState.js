@@ -21,12 +21,26 @@ const currentPlayerPosition = [
   },
 
 ]
-const currentPillarPosition = [
-  {
+const pillarPosition = () => {
+  /*const startPos = {
     row: 15,
     column: 49,
+  }*/
+  let randomNumber = 15;
+  const result = []
+  for(let i = 0; i < 3; i++){
+    for(let k = 0; k < 50; k++){
+      if(k < randomNumber || k > (randomNumber+15)){
+        result.push({
+          row:k,
+          column:50+i,
+        })
+      }
+    }
   }
-]
+return result;
+}
+const currentPillarPosition = pillarPosition()
 
 const table = () => {
   const empty = 'empty'
