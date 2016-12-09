@@ -31,3 +31,9 @@ export const gameNotOver = () => ({
 export const pillarMovement = () => ({
   type: 'PILLAR_MOVE',
 })
+
+export const reusePillar = () => ({
+  type: 'RERENDER_AT_FRONT',
+})
+
+

@@ -1,4 +1,7 @@
 
+import pillarPositionCalculator from '../pillarPositionCalculator'
+
+
 const currentPillarPosition = (state = [], action) => {
 
   switch(action.type){
@@ -8,6 +11,10 @@ const currentPillarPosition = (state = [], action) => {
     column: position.column-1,
     color: position.color,
   }))
+
+
+  case 'RERENDER_AT_FRONT':
+    return pillarPositionCalculator()
   default:
     return state
   }

@@ -10,9 +10,14 @@ function render(){
   if(currentState.isGameOn){
 
     if(currentState.currentPlayerPosition.find(a => a.row > 50 || a.row < 0)){
-      
       store.dispatch(actionsCreators.gameOver())
       store.dispatch(actionsCreators.turnGameOff())
+    }
+
+
+    const pillarPos = currentState.currentPillarPosition[0]
+    if(pillarPos.column < -3){
+      store.dispatch(actionsCreators.reusePillar())
     }
 
     if(currentState.goingUp){
