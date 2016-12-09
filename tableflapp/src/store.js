@@ -45,6 +45,7 @@ const defaultState = {
   isGameOn: false,
   currentPlayerPosition,
   goingUp: false,
+  isGameOver: false,
 }
 
 const store = createStore(rootReducer, defaultState)

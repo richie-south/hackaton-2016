@@ -19,3 +19,12 @@ export const turnGameOff = () => ({
 export const movePlayerDown = () => ({
   type: 'MOVE_PLAYER_DOWN',
 })
+
+export const gameOver = () => ({
+  type: 'SET_GAME_OVER',
+})
+
+export const gameNotOver = () => ({
+  type: 'SET_GAME_NOT_OVER',
+})
+

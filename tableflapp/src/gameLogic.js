@@ -4,8 +4,16 @@ import * as actionsCreators from './actions/actionCreators'
 
 let jumpCount = 0
 function render(){
-  if(store.getState().isGameOn){
-    if(store.getState().goingUp){
+
+  const currentState = store.getState() 
+
+  if(currentState.isGameOn){
+    
+    if(currentState.currentPlayerPosition.find(a => a.row > 50 || a.row < 0)){
+      store.dispatch(actionsCreators.gameOver())
+    }
+    
+    if(currentState.goingUp){
       if(jumpCount > 10){
           store.dispatch(actionsCreators.stopJump())
           jumpCount = 0;
