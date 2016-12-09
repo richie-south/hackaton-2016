@@ -7,11 +7,13 @@ const currentPlayerPosition = (state = [], action) => {
   return state.map((position) => ({
     row: position.row-1,
     column: position.column,
+    color: position.color,
   }))
   case 'MOVE_PLAYER_DOWN':
     return state.map((position) => ({
       row: position.row+1,
       column: position.column,
+      color: position.color,
     }))
   default:
     return state
