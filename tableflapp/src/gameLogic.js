@@ -10,7 +10,9 @@ function render(){
   if(currentState.isGameOn){
 
     if(currentState.currentPlayerPosition.find(a => a.row > 50 || a.row < 0)){
+      
       store.dispatch(actionsCreators.gameOver())
+      store.dispatch(actionsCreators.turnGameOff())
     }
 
     if(currentState.goingUp){

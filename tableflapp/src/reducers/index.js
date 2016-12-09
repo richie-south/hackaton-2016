@@ -6,7 +6,6 @@ import goingUp from './goingUp'
 import isGameOver from './isGameOver'
 import currentPillarPosition from './currentPillarPosition'
 
-
 const rootReducer = combineReducers({
   table,
   isGameOn,

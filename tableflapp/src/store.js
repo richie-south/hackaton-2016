@@ -1,5 +1,6 @@
-import { createStore } from 'redux'
+import { createStore, compose } from 'redux'
 import rootReducer from './reducers/index'
+import reduxReset from 'redux-reset'
 
 const currentPlayerPosition = [
   {
@@ -54,6 +55,15 @@ const defaultState = {
   isGameOver: false,
 }
 
-const store = createStore(rootReducer, defaultState)
+
+
+
+const enHanceCreateStore = compose(
+    reduxReset()  // Will use 'RESET' as default action.type to trigger reset
+  )(createStore)
+const store = enHanceCreateStore(rootReducer, defaultState)
+
+
+//const store = createStore(, defaultState)
 
 export default store
