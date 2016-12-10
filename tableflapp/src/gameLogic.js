@@ -18,20 +18,21 @@ function render(){
     const pillarPos = currentState.currentPillarPosition[0]
     if(pillarPos.column < -3){
       store.dispatch(actionsCreators.reusePillar())
+      store.dispatch(actionsCreators.increaseScore())
     }
 
 
     currentState.currentPlayerPosition.forEach(playerPosition => {
-      const isCollision = currentState.currentPillarPosition.find(pillarPosition => 
-        pillarPosition.row === playerPosition.row && 
+      const isCollision = currentState.currentPillarPosition.find(pillarPosition =>
+        pillarPosition.row === playerPosition.row &&
         pillarPosition.column === playerPosition.column)
-      
+
       if(isCollision){
         store.dispatch(actionsCreators.gameOver())
         store.dispatch(actionsCreators.turnGameOff())
       }
     })
-    
+
 
     if(currentState.goingUp){
       if(jumpCount > 10){

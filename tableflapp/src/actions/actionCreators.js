@@ -36,4 +36,10 @@ export const reusePillar = () => ({
   type: 'RERENDER_AT_FRONT',
 })
 
+export const increaseScore = () => ({
+  type: 'INCREASE_SCORE',
+})
 
+export const decreaseScore = () => ({
+  type: 'DECREASE_SCORE',
+})

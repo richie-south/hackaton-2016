@@ -10,6 +10,7 @@ class MainTable extends Component {
   render() {
 
     return (
+      <div>
       <table>
       <tbody>
       {
@@ -31,6 +32,8 @@ class MainTable extends Component {
       }
       </tbody>
       </table>
+      <h1>{this.props.score}</h1>
+      </div>
     )
   }
 }
@@ -39,4 +42,5 @@ export default connect((state) => ({
   table: state.table,
   currentPlayerPosition: state.currentPlayerPosition,
   currentPillarPosition: state.currentPillarPosition,
+  score:state.score,
 }), MainTable);

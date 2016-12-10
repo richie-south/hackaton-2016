@@ -5,6 +5,8 @@ import currentPlayerPosition from './currentPlayerPosition'
 import goingUp from './goingUp'
 import isGameOver from './isGameOver'
 import currentPillarPosition from './currentPillarPosition'
+import score from './score'
+
 
 const rootReducer = combineReducers({
   table,
@@ -13,6 +15,7 @@ const rootReducer = combineReducers({
   goingUp,
   isGameOver,
   currentPillarPosition,
+  score,
 })
 
 export default rootReducer

@@ -121,6 +121,7 @@ const defaultState = {
   currentPillarPosition: pillarPosition(),
   goingUp: false,
   isGameOver: false,
+  score: 0,
 }
 
 export default defaultState
