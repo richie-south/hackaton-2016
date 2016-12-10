@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import connect from '../../connect/connect'
-//import store from '../../store'
-//import * as actionsCreators from '../../actions/actionCreators'
-
-
+import Immutable from 'immutable'
 
 class MainTable extends Component {
+
+  shouldComponentUpdate(nextProps) {
+    let prevItems = Immutable.fromJS(this.props.currentPlayerPosition)
+    let nextItems = Immutable.fromJS(nextProps.currentPlayerPosition)
+    return !Immutable.is(prevItems, nextItems)
+  }
 
   render() {
 
@@ -20,10 +23,10 @@ class MainTable extends Component {
             const isPillar = this.props.currentPillarPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
             if(isPlayer){
 
-              return (<td key={`tdKey_${columnNr}`} className='player' style={{background: isPlayer.color, border: 'none'}}></td>)
+              return (<td key={`tdKey_${columnNr}`} style={{background: isPlayer.color, border: 'none'}}></td>)
             }
             if(isPillar){
-              return (<td key={`tdKey_${columnNr}_pillar`} className='pillar'style={{border: 'none', background: isPillar.color}}></td>)
+              return (<td key={`tdKey_${columnNr}_pillar`} style={{border: 'none', background: isPillar.color}}></td>)
             }
             return (<td key={`tdKey_${columnNr}`} ></td>)
           })
