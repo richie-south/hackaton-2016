@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import connect from '../../connect/connect'
 import Immutable from 'immutable'
 
-class MainTable extends Component {
+class MainTable extends PureComponent {
 
   shouldComponentUpdate(nextProps) {
     let prevItems = Immutable.fromJS(this.props.currentPlayerPosition)
@@ -11,23 +11,41 @@ class MainTable extends Component {
   }
 
   render() {
-
+    let pillarColumnNr = 0
     return (
       <div>
       <table>
       <tbody>
       {
+        
         this.props.table.map((row, rowNr) => {
-          const rows = row.map((column, columnNr) => {
-            const isPlayer = this.props.currentPlayerPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
-            const isPillar = this.props.currentPillarPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
-            if(isPlayer){
+          
+          let isPillarFound = false
 
-              return (<td key={`tdKey_${columnNr}`} style={{background: isPlayer.color, border: 'none'}}></td>)
+          const rows = row.map((column, columnNr) => {
+
+            if(columnNr > 9 && columnNr < 16){  
+              const player = this.props.currentPlayerPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
+              if(player){
+                return (<td key={`tdKey_${columnNr}`}  style={{background: player.color, border: 'none'}}></td>)
+              }
             }
-            if(isPillar){
-              return (<td key={`tdKey_${columnNr}_pillar`} style={{border: 'none', background: isPillar.color}}></td>)
+            
+            if(rowNr === 0 && !isPillarFound){
+              const pillar = this.props.currentPillarPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
+              if(pillar){
+                pillarColumnNr = columnNr
+                isPillarFound = true
+              }
             }
+
+            if(pillarColumnNr === columnNr || (pillarColumnNr+1) === columnNr || (pillarColumnNr+2) === columnNr){
+              const pillar = this.props.currentPillarPosition.find(pos => pos.row === rowNr && pos.column === columnNr)
+              if(pillar){
+                return (<td key={`tdKey_${columnNr}_pillar`} style={{border: 'none', background: pillar.color}}></td>)
+              }
+            }
+            
             return (<td key={`tdKey_${columnNr}`} ></td>)
           })
           return (<tr key={`${rowNr}_rowNr`}>{rows}</tr>)

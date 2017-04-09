@@ -16,7 +16,7 @@ document.addEventListener('keydown', function (e) {
     })
     store.dispatch(actionsCreators.turnGameOn())
     store.dispatch(actionsCreators.gameNotOver())
-    return;
+    return
   }
 
   if(!currentState.isGameOn){

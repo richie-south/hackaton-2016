@@ -29,9 +29,6 @@ function render(){
       store.dispatch(actionsCreators.increaseScore())
     }
 
-
-
-
     currentState.currentPlayerPosition.forEach(playerPosition => {
       const isCollision = currentState.currentPillarPosition.find(pillarPosition =>
         pillarPosition.row === playerPosition.row &&
@@ -45,8 +42,8 @@ function render(){
 
     if(currentState.goingUp){
       if(jumpCount > 10){
-          store.dispatch(actionsCreators.stopJump())
-          jumpCount = 0;
+        store.dispatch(actionsCreators.stopJump())
+        jumpCount = 0
       }
       store.dispatch(actionsCreators.movePlayerUp())
       jumpCount++;
